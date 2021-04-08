@@ -8,7 +8,7 @@ function colorify(obj,json){
 		else if (/true|false/.test(m)){c="blue"}
 		else if (/null|undefined/.test(m)){c="magenta"}
 		else if (/[\,\s\[\]\{\}\(\)\:\;]+/.test(m)){c="black"}
-		m=m.replace(/\n/,"<br>")
+		m=m.replace(/\n/gm,"<br>")
 		a.push([c,`<span style="color: ${c}">${sp==true?m.replace(":",""):m}</span>`])
 		if (sp==true){a.push(["black","<span style=\"color: black\">:</span>"])}
 	})
